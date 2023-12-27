@@ -74,8 +74,7 @@ public class Notifications extends SettingsPreferenceFragment implements
         final Resources res = mContext.getResources();
 
         mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
-        boolean mAlertSliderAvailable = res.getBoolean(
-                com.android.internal.R.bool.config_hasAlertSlider);
+        boolean mAlertSliderAvailable = false;
         if (!mAlertSliderAvailable)
             prefScreen.removePreference(mAlertSlider);
 
@@ -152,8 +151,7 @@ public class Notifications extends SettingsPreferenceFragment implements
                     List<String> keys = super.getNonIndexableKeys(context);
                     final Resources res = context.getResources();
 
-                    boolean mAlertSliderAvailable = res.getBoolean(
-                            com.android.internal.R.bool.config_hasAlertSlider);
+                    boolean mAlertSliderAvailable = false;
                     if (!mAlertSliderAvailable)
                         keys.add(ALERT_SLIDER_PREF);
 
