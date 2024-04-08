@@ -41,6 +41,9 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+
 import com.crdroid.settings.fragments.About;
 import com.crdroid.settings.fragments.Buttons;
 import com.crdroid.settings.fragments.LockScreen;
@@ -67,6 +70,48 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().setTitle(R.string.crdroid_settings_title);
+        setSigmaDashboardStyle();
+    }
+
+    public void onResume() {
+        super.onResume();
+        setSigmaDashboardStyle();
+    }
+
+    private void setSigmaDashboardStyle() {
+        int mDashBoardStyle = geSettingstDashboardStyle();
+        final PreferenceScreen mScreen = getPreferenceScreen();
+        final int mCount = mScreen.getPreferenceCount();
+        for (int i = 0; i < mCount; i++) {
+            final Preference mPreference = mScreen.getPreference(i);
+
+            String mKey = mPreference.getKey();
+
+            if (mKey == null) continue;
+
+            if (mDashBoardStyle == 1 ){
+               if (mKey.equals("ui_settings_category")) {
+                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_top);
+                } else if (mKey.equals("about_crdroid")) {
+                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_bottom);
+                } else {
+                    mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle); 
+                }  
+            } else  if (mDashBoardStyle == 3){
+                            if (mKey.equals("ui_settings_category")) {
+                    mPreference.setLayoutResource(R.layout.top_level_preference_top_card);
+                } else if (mKey.equals("about_crdroid")) {
+                    mPreference.setLayoutResource(R.layout.top_level_preference_bottom_card);
+                } else {
+                    mPreference.setLayoutResource(R.layout.top_level_preference_middle_card); 
+                } 
+            }
+        }
+    }
+
+    private int geSettingstDashboardStyle() {
+        return Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.SETTINGS_DASHBOARD_STYLE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override

@@ -1342,4 +1342,11 @@
     <!-- IME Space -->
     <string name="navigation_bar_ime_space_title">IME space</string>
     <string name="navigation_bar_ime_space_summary">Add space below keyboard when navigation hint is disabled</string>
+
+    <!-- Settings dashboard style -->
+    <string name="settings_dashboard_style_title">Settings style</string>
+    <string name="settings_dashboard_style_summary">Settings homepage and Alphabet style</string>
+    <string name="settings_dashboard_style_aosp">AOSP</string>
+    <string name="settings_dashboard_style_dot">DoT</string>
+    <string name="settings_dashboard_style_nad">NAD</string>
 </resources>
