@@ -300,4 +300,13 @@
     <string name="pulse_custom_gravity_center">Center</string>
     <string name="visualizer_center_mirrored_title">Center mirrored</string>
     <string name="visualizer_center_mirrored_summary">Set the visualizer in center mirrored mode</string>
+
+    <!-- Settings dashboard style -->
+    <string name="settings_dashboard_style_title">Settings style</string>
+    <string name="settings_dashboard_style_summary">Settings homepage and Alphabet style</string>
+    <string name="settings_dashboard_style_aosp">AOSP</string>
+    <string name="settings_dashboard_style_dot">DoT</string>
+    <string name="settings_dashboard_style_nad">NAD</string>
+    <string name="settings_dashboard_style_sigma">Sigma</string>
+
 </resources>
