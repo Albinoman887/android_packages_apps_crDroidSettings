@@ -55,6 +55,9 @@ import com.crdroid.settings.fragments.Sound;
 import com.crdroid.settings.fragments.StatusBar;
 import com.crdroid.settings.fragments.UserInterface;
 
+import android.os.UserHandle;
+import android.provider.Settings;
+
 public class crDroidSettingsLayout extends SettingsPreferenceFragment {
 
     private static final String TAG = "crDroidSettingsLayout";
@@ -97,14 +100,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
                 } else {
                     mPreference.setLayoutResource(R.layout.dot_dashboard_preference_middle); 
                 }  
-            } else  if (mDashBoardStyle == 3){
-                            if (mKey.equals("ui_settings_category")) {
-                    mPreference.setLayoutResource(R.layout.top_level_preference_top_card);
-                } else if (mKey.equals("about_crdroid")) {
-                    mPreference.setLayoutResource(R.layout.top_level_preference_bottom_card);
-                } else {
-                    mPreference.setLayoutResource(R.layout.top_level_preference_middle_card); 
-                } 
             }
         }
     }

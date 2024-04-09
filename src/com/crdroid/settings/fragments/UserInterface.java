@@ -45,7 +45,8 @@ import com.crdroid.settings.fragments.ui.MonetSettings;
 import java.util.List;
 
 @SearchIndexable
-public class UserInterface extends SettingsPreferenceFragment {
+public class UserInterface extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener{
 
     public static final String TAG = "UserInterface";
 
